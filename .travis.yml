@@ -12,11 +12,11 @@ install:
 script:
   - deecubes -r ./raw -o ./docs --sync
 
-deploy:
-  provider: pages
-  local_dir: docs
-  target_branch: master
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+#deploy:
+#  provider: pages
+#  local_dir: docs
+#  target_branch: master
+#  skip_cleanup: true
+#  github_token: $GITHUB_TOKEN
+#  on:
+#    branch: master
