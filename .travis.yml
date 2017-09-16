@@ -5,6 +5,9 @@ python:
 
 install:
   - pip install deecubes
+  - git rev-parse --short HEAD
+  - git checkout master
+  - git rev-parse --short HEAD
 
 script:
   - deecubes -r ./raw -o ./docs --sync
@@ -12,6 +15,7 @@ script:
 deploy:
   provider: pages
   local_dir: docs
+  target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   on:
