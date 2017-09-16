@@ -19,3 +19,5 @@ deploy:
   target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  on:
+    branch: source
