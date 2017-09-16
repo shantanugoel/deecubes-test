@@ -3,20 +3,19 @@ language: python
 python:
   - 3.6
 
+branches:
+  only:
+    - source
+
 install:
   - pip install deecubes
-  - git rev-parse --short HEAD
-  - git checkout master
-  - git rev-parse --short HEAD
 
 script:
-  - deecubes -r ./raw -o ./docs --sync
+  - deecubes -r ./raw -o ./output/docs --sync
 
-#deploy:
-#  provider: pages
-#  local_dir: docs
-#  target_branch: master
-#  skip_cleanup: true
-#  github_token: $GITHUB_TOKEN
-#  on:
-#    branch: master
+deploy:
+  provider: pages
+  local_dir: output
+  target_branch: master
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
